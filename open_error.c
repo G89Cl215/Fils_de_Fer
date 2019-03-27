@@ -6,20 +6,24 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 14:51:19 by flviret           #+#    #+#             */
-/*   Updated: 2019/03/20 23:08:42 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/03/26 14:33:22 by flviret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int		open_error(char *file, t_data *data)
+int		open_error(int ac, char **av)
 {
-	int fd;
+	int		fd;
+	int		i;
 
-	if ((fd = open(file, O_RDONLY)) < 0)
+	i = 1;
+	while (i < ac && av[i][0] == '-')
+		i++;	
+	if ((fd = open(av[i], O_RDONLY)) <= 0)
 	{
 		ft_printf("no file.");
-		ft_putendl(file);
+		ft_putendl(av[i]);
 		exit(EXIT_FAILURE);
 	}
 	if ((read(fd, 0, 0) < 0))
@@ -28,15 +32,14 @@ int		open_error(char *file, t_data *data)
 		exit(EXIT_FAILURE);
 	}
 	close(fd);
-	return (1);
+	return (i);
 }
 
-int		error_height(char *file, t_data *data)
+void	error_height(t_data *data)
 {
-	if (data->height == 0)
+	if (data->tab_height == 0)
 	{
 		ft_printf("no data inside");
 		exit(EXIT_FAILURE);
 	}
-	return (1);
 }

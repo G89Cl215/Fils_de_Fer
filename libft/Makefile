@@ -6,7 +6,7 @@
 #    By: flviret <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/15 13:58:52 by flviret           #+#    #+#              #
-#    Updated: 2019/03/20 15:45:17 by flviret          ###   ########.fr        #
+#    Updated: 2019/03/23 14:36:02 by tgouedar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ HDR			=	$(PTF_PATH)
 
 LIB_PATH	=	libft
 
-LIB			=	$(LIB_PATH)/libft.a
+LIB			=	$(addprefix $(LIB_PATH)/,libft.a)
 
 DIR_O		=	obj
 

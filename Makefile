@@ -3,76 +3,65 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: baavril <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: flviret <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/01/16 10:37:50 by baavril           #+#    #+#              #
-#    Updated: 2019/03/20 12:17:53 by tgouedar         ###   ########.fr        #
+#    Created: 2019/03/26 14:20:14 by flviret           #+#    #+#              #
+#    Updated: 2019/03/26 15:56:59 by flviret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC			=	gcc
-G_CFLAGS	=	-Wall -Werror -Wextra
+NAME    =    fdf
 
-MLX_CFLAG	=	-lmlx -lXext -lX11 -lmlx -framework OpenGL -framework AppKit
+LIBFT_PATH    =    libft/
+LMLX_PATH    =    minilibx_macos/
 
-NAME		=	fdf
+SRCS    =    main.c    \
+			 create_window.c \
+			 loopandevent.c \
+			 manage_array.c \
+			 open_error.c \
+			 set_view.c \
+			 update_image.c \
+			 window_manipulation.c
 
-LIB_PATH	=	libft
-LIB			=	libftprintf.a
+OBJS    =    $(SRCS:.c=.o)
 
-LIBS 		=	 $(addprefix $(LIB_PATH)/,$(LIB)) 
+HDR        =    fdf.h
 
-DIR_O		=   obj
+CC        =    gcc
+CFLAGS    =    -Wall -Werror -Wextra
 
-SRC_PATH	=	src
-SOURCES 	=	main.c \
+LIB        =    $(LIBFT_PATH)/libftprintf.a
+LMLX    =    $(LMLX_PATH)/libmlx.a
 
-SRCS    	=   $(addprefix $(SRC_PATH)/,$(SOURCES))
-OBJS    	=   $(addprefix $(DIR_O)/,$(SOURCES:.c=.o))
+FRAMEWORKS    =    -framework OpenGL -framework AppKit
 
-TEST		=	bresenham.c \
+RM        =    rm -f
 
+CLEAN    =    clean
 
-TEST_OBJS	=	$(TEST:.c=.o)
+all        :    $(NAME)
 
-HDR			=	libft/option.h \
-				libft/libft.h \
-				list_lib/ls_list.h \
-				fdf.h
+$(LIB)    :
+	@make -C $(LIBFT_PATH)
 
-HDR_FLAG	=	-I libft \
-				-I includes
+$(LMLX)        :
+	@make -C $(LMLX_PATH)
 
-CLEAN		=   clean
+$(NAME)    :    $(OBJS) $(HDR) $(LIB) $(LMLX) Makefile
+	@$(CC) $(CFLAGS) $(LIB) $(LMLX) -o $(NAME) $(SRCS) -I $(HDR) $(FRAMEWORKS)
+	@echo "fdf has been successfully created."
 
-all : $(NAME)
-
-$(LIB_PATH)/$(LIB) :
-	@echo "Comping $(LIB)"
-	@make -C $(LIB_PATH)
-
-$(NAME) : $(LIBS) $(TEST_OBJS) $(HDR) Makefile
-	@$(CC) $(CFLAGS) $(MLX_CFLAG) $(TEST_OBJS) $(LIBS) -o $(NAME) $(HDR_FLAG)
-	@echo "ft_ls has been successfully created."
-
-$(DIR_O) :
-	@mkdir -p $(DIR_O)
-
-$(DIR_O)/%.o : $(SRC_PATH)/%.c | $(DIR_O)
-	@$(CC) $(CFLAGS) -o $@ -c $< $(HDR_FLAG)
-	@echo " \t \t \t \t \t \t \t \t [OK]  \r $^  \r "
-
-clean :
-	@rm -f $(OBJS)
-	@rm -Rf $(DIR_O)
-	@make clean -C $(LIB_PATH)
+clean    :
+	@$(RM) $(OBJS)
+	@make clean -C $(LIBFT_PATH)
+	@make clean -C $(LMLX_PATH)
 	@echo "All .o files have been deleted."
 
-fclean :   clean
-	@rm -f $(NAME)
-	@make fclean -C $(LIB_PATH)
-	@echo "ft_ls and libft.a have been deleted."
+fclean    :    clean
+	@$(RM) $(NAME) $(LIB)
+	@echo "fclean done."
 
-re  :   fclean all
+re        :    fclean all
 
-.PHONY: all clean fclean re lib_msg
+.PHONY:    all clean fclean re

@@ -1,1 +1,1 @@
-gcc main.c create_window.c bresenham.c set_view.c open_error.c window_manipulation.c libft/libftprintf.a -I /usr/local/include -I libft/printf/ -I libft/libft/ -L /usr/local/lib  -lmlx -framework OpenGL -framework AppKit
+gcc main.c update_image.c loopandevent.c manage_array.c create_window.c  set_view.c open_error.c window_manipulation.c libft/libftprintf.a -I /usr/local/include -I libft/printf/ -I libft/libft/ -L /usr/local/lib  -lmlx -framework OpenGL -framework AppKit
