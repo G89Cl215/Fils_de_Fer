@@ -6,7 +6,7 @@
 #    By: flviret <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 21:22:39 by flviret           #+#    #+#              #
-#    Updated: 2019/03/20 12:12:28 by tgouedar         ###   ########.fr        #
+#    Updated: 2019/04/03 13:16:23 by tgouedar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRCS	=	ft_memset.c		\
 			ft_atoi.c		\
 			ft_isalpha.c	\
 			ft_isdigit.c	\
+			ft_intlen.c		\
 			ft_isalnum.c	\
 			ft_isascii.c	\
 			ft_isprint.c	\
@@ -61,6 +62,7 @@ SRCS	=	ft_memset.c		\
 			ft_putendl.c	\
 			ft_putnbr.c		\
 			ft_putchar_fd.c	\
+			ft_arrlen.c		\
 			ft_putstr_fd.c	\
 			ft_putendl_fd.c	\
 			ft_putnbr_fd.c	\
@@ -161,6 +163,7 @@ $(OBJDIR) :
 
 clean	:	
 			@$(RM) $(OBJS)
+			@$(RM) -R $(OBJDIR)
 			@echo "All .o files have been deleted."
 
 fclean	:	clean

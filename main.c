@@ -6,7 +6,7 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 13:21:59 by flviret           #+#    #+#             */
-/*   Updated: 2019/03/27 16:34:48 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/03 14:02:00 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void		*init_data(t_data *new)
 	new->tab_width = 0;
 	new->win_height = FS_HEIGHT;
 	new->win_width = FS_WIDTH;
-	new->offset_origin_x = FS_HEIGHT / 2; //arbitraire
-	new->offset_origin_y = FS_WIDTH / 2; //arbitraire
-	new->zoom =	4.0;
+	new->offset_origin_x = FS_HEIGHT / 2;
+	new->offset_origin_y = FS_WIDTH / 2;
+	new->depth_mod = 1.0;
 	return (new);
 }
 
-int		ft_parse_file(int ac, char **av)
+int			ft_parse_file(int ac, char **av)
 {
 	int		i;
 	int		j;
@@ -34,7 +34,7 @@ int		ft_parse_file(int ac, char **av)
 	j = 0;
 	while (++i < ac)
 	{
-		if (av[i][0] != '-' )
+		if (av[i][0] != '-')
 			j++;
 	}
 	if (j != 1)
@@ -45,10 +45,10 @@ int		ft_parse_file(int ac, char **av)
 	return (1);
 }
 
-int            main(int ac, char **av)
+int			main(int ac, char **av)
 {
-	t_options        option;
-	t_data            data;
+	t_options		option;
+	t_data			data;
 
 	if (ac < 2)
 		ft_printf("no file found");
@@ -57,7 +57,8 @@ int            main(int ac, char **av)
 		if (!(ft_parse_file(ac, av)))
 			return (0);
 		init_data(&data);
-		check_file(av[1], &data);
+		if (!(check_file(av[1], &data)))
+			return (0);
 		new_tab(&data);
 		fd_in_array(av[1], &data);
 		ft_init_window(&data);

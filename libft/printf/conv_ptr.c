@@ -6,7 +6,7 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/26 13:07:23 by flviret           #+#    #+#             */
-/*   Updated: 2019/03/07 18:19:39 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/03 13:53:08 by flviret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,14 @@ static char	*ft_conv_null_ptr(t_flags *fl)
 	{
 		if (!(conv = ft_memalloc(fl->prc + 1)))
 			return (NULL);
-		conv = ft_memset(conv, '0', fl->prc);
-		conv[fl->prc] = '\0';
+		ft_bzero(conv, sizeof(char) * (fl->prc + 1));
 		tmp = conv;
-		if (fl->dz == 0)
+		if (!(conv = ft_strjoin("0x", conv)))
 		{
-			if (!(conv = ft_strjoin("0x", conv)))
-			{
-				ft_strdel(&conv);
-				return (NULL);
-			}
-			ft_memdel(&tmp);
+			ft_strdel(&conv);
+			return (NULL);
 		}
+		ft_memdel(&tmp);
 	}
 	return (conv);
 }
@@ -66,7 +62,7 @@ static int	ft_format_null_ptr(t_flags *fl, char **conv, t_buf *buf)
 		}
 	}
 	if (!(buf->str = ft_memjoin_free(buf->str, buf->len, *conv,
-					ft_strlen(*conv))))
+			ft_strlen(*conv))))
 		return (clean_quit(conv, 0));
 	buf->len += ft_strlen(*conv);
 	return (1);
@@ -116,7 +112,7 @@ int			ft_conv_ptr(t_flags *fl, t_buf *buf, va_list ap)
 		return (0);
 	conv = ft_strlowcase(conv);
 	if (!(buf->str = ft_memjoin_free(buf->str, buf->len, conv,
-					ft_strlen(conv))))
+			ft_strlen(conv))))
 		return (clean_quit(&conv, 0));
 	buf->len += ft_strlen(conv);
 	return (1);

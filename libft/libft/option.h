@@ -17,7 +17,7 @@
 
 typedef struct	s_options
 {
-	int			w : 1;
+	unsigned int	w : 1;
 }				t_options;
 
 int				ft_option(int ac, char **av, t_options *options);

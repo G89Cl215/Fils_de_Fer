@@ -6,7 +6,7 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 14:51:19 by flviret           #+#    #+#             */
-/*   Updated: 2019/03/26 14:33:22 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/03 13:40:51 by flviret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		open_error(int ac, char **av)
 
 	i = 1;
 	while (i < ac && av[i][0] == '-')
-		i++;	
+		i++;
 	if ((fd = open(av[i], O_RDONLY)) <= 0)
 	{
 		ft_printf("no file.");
@@ -42,4 +42,17 @@ void	error_height(t_data *data)
 		ft_printf("no data inside");
 		exit(EXIT_FAILURE);
 	}
+}
+
+int		safe_open(const char *pathname)
+{
+	int		fd;
+
+	fd = open(pathname, O_RDONLY);
+	if (fd < 0)
+	{
+		ft_printf("No File Found");
+		return (0);
+	}
+	return (fd);
 }

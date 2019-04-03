@@ -6,12 +6,13 @@
 /*   By: tgouedar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 15:26:25 by tgouedar          #+#    #+#             */
-/*   Updated: 2019/03/27 15:25:53 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/03 14:34:17 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "set_view.h"
+#include "window_manipulation.h"
 #include "libft/printf/ft_printf.h"
 
 const float		g_iso[2][3] =
@@ -20,7 +21,7 @@ const float		g_iso[2][3] =
 	{0.408248290463863, 0.408248290463863, -0.816496580927726}
 };
 
-const float		g_cos_rot =	0.99144486137381;
+const float		g_cos_rot = 0.99144486137381;
 const float		g_sin_rot = 0.130526192220052;
 
 void			ft_set_iso(t_data *data)
@@ -34,7 +35,7 @@ void			ft_set_iso(t_data *data)
 	ft_set_view(data);
 }
 
-static void			ft_fill_rot(float *coeff, int flag, int direct)
+static void		ft_fill_rot(float *coeff, int flag, int direct)
 {
 	if (flag == 0 || flag == 3)
 		*coeff = g_cos_rot;
@@ -44,7 +45,7 @@ static void			ft_fill_rot(float *coeff, int flag, int direct)
 		*coeff = (float)(direct * g_sin_rot);
 }
 
-static void			ft_apply_rot(t_data *data, float rot[3][3])
+static void		ft_apply_rot(t_data *data, float rot[3][3])
 {
 	int		i;
 	float	tmp[2][3];
@@ -87,7 +88,6 @@ void			ft_rot(t_data *data, int axis, int direct)
 			else
 				ft_fill_rot(&(rot[i][j++]), flag++, direct);
 		}
-		printf("%f,\t%f,\t%f\n", rot[i][0], rot[i][1], rot[i][2]);
 		i++;
 	}
 	ft_apply_rot(data, rot);
@@ -107,36 +107,12 @@ void			ft_view_from_axis(t_data *data, int axis)
 	{
 		if ((i - axis))
 		{
-			data->view[1][i] = j;
-			data->view[0][i] = -1.0 + j;
+			data->view[1][i] = -j;
+			data->view[0][i] = 1.0 - j;
 			j += 1.0;
 		}
 		i++;
 	}
 	ft_set_view(data);
-}
-
-void			ft_set_view(t_data *data)
-{
-	unsigned int		i;
-	unsigned int		j;
-
-	i = 0;
-	while (i < data->tab_height)
-	{
-		j = 0;
-		while (j < data->tab_width)
-		{
-			data->pixel[i][j][0] = (float)(i - data->tab_height / 2.0) * data->view[0][0]
-			+ (float)(j - data->tab_width / 2.0) * data->view[0][1]
-			+ (float)(data->tab[i][j]) * data->view[0][2];
-			data->pixel[i][j][1] = (float)(i - data->tab_height / 2.0) * data->view[1][0]
-			+ (float)(j - data->tab_width / 2.0) * data->view[1][1]
-			+ (float)(data->tab[i][j]) * data->view[1][2];
-//			ft_printf("data->pixel[%i, %i] = [%f, %f]\n", i, j, data->pixel[i][j][0], data->pixel[i][j][1]);
-			j++;
-		}
-		i++;
-	}
-	ft_printf("fin calcul iso\n");
+	ft_init_zoom(data);
 }

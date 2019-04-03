@@ -6,7 +6,7 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 11:52:06 by flviret           #+#    #+#             */
-/*   Updated: 2019/03/20 11:52:42 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/03/29 17:44:43 by flviret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,5 +156,7 @@ void				*ft_memjoin_free(void *first, size_t size_f, void *second,
 						size_t size_s);
 char				*ft_strsubfree(char *s, unsigned int start, size_t len);
 char				*ft_strjoinfree(char *s1, char *s2);
+size_t				ft_arrlen(char **arr);
+size_t				ft_intlen(long int n);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: flviret <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/15 13:58:52 by flviret           #+#    #+#              #
-#    Updated: 2019/03/23 14:36:02 by tgouedar         ###   ########.fr        #
+#    Updated: 2019/04/03 13:13:35 by tgouedar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,6 +75,7 @@ clean			:
 
 fclean			:	clean
 	@$(RM) $(NAME) $(LIB)
+	@make fclean -C $(LIB_PATH)
 	@echo "libftprintf.a and libft.a has been deleted."
 
 re				:	fclean all
