@@ -6,14 +6,14 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 13:21:59 by flviret           #+#    #+#             */
-/*   Updated: 2019/04/03 14:02:00 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/03 15:09:49 by flviret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 #include "window_manipulation.h"
 
-void		*init_data(t_data *new)
+static void	*init_data(t_data *new)
 {
 	new->tab_height = 0;
 	new->tab_width = 0;
@@ -25,7 +25,7 @@ void		*init_data(t_data *new)
 	return (new);
 }
 
-int			ft_parse_file(int ac, char **av)
+static int	ft_parse_file(int ac, char **av)
 {
 	int		i;
 	int		j;

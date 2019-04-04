@@ -6,7 +6,7 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 13:27:32 by flviret           #+#    #+#             */
-/*   Updated: 2019/04/03 14:01:26 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/03 15:13:47 by flviret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ int				open_error(int ac, char **av);
 size_t			ft_intlen(long int n);
 void			fd_in_array(char *file, t_data *data);
 void			new_tab(t_data *data);
-void			get_width(char *file, t_data *data);
-void			get_height(char *file, t_data *data);
 void			error_height(t_data *data);
 int				check_file(char *file, t_data *data);
 void			ft_free_tab(char **tab);
