@@ -6,12 +6,11 @@
 /*   By: tgouedar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/24 11:16:20 by tgouedar          #+#    #+#             */
-/*   Updated: 2019/04/03 13:38:42 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/04 12:31:58 by flviret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "window_manipulation.h"
-#include <stdio.h>
 
 static void
 	ft_calcul(t_data *win, int pt1[2], int pt2[2])

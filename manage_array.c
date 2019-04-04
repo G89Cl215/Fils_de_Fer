@@ -6,13 +6,13 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 17:18:11 by flviret           #+#    #+#             */
-/*   Updated: 2019/04/03 13:58:02 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/03 15:11:42 by flviret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void			check_width(int fd, int width)
+static void	check_width(int fd, int width)
 {
 	char		*line;
 	int			comp;
@@ -36,7 +36,7 @@ void			check_width(int fd, int width)
 	}
 }
 
-void			get_width(char *file, t_data *data)
+static void	get_width(char *file, t_data *data)
 {
 	int				fd;
 	char			*line;
@@ -60,7 +60,7 @@ void			get_width(char *file, t_data *data)
 	close(fd);
 }
 
-void			get_height(char *file, t_data *data)
+static void	get_height(char *file, t_data *data)
 {
 	int			fd;
 	char		*line;
@@ -75,7 +75,7 @@ void			get_height(char *file, t_data *data)
 	close(fd);
 }
 
-int				check_inside(char *file)
+static int	check_inside(char *file)
 {
 	int		fd;
 	char	*line;
@@ -96,7 +96,7 @@ int				check_inside(char *file)
 	return (1);
 }
 
-int				check_file(char *file, t_data *data)
+int			check_file(char *file, t_data *data)
 {
 	if (!(check_inside(file)))
 		return (0);

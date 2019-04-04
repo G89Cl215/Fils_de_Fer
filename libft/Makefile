@@ -6,7 +6,7 @@
 #    By: flviret <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/15 13:58:52 by flviret           #+#    #+#              #
-#    Updated: 2019/04/03 13:13:35 by tgouedar         ###   ########.fr        #
+#    Updated: 2019/04/04 12:44:12 by flviret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,7 @@ $(DIR_O)		:
 
 clean			:
 	@$(RM) $(OBJS)
-	@rm -rf $(DIR_O)
+	@rm -Rf $(DIR_O)
 	@make clean -C $(LIB_PATH)
 	@echo "All .o files have been deleted."
 
