@@ -6,11 +6,11 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 11:49:56 by flviret           #+#    #+#             */
-/*   Updated: 2019/03/05 11:39:17 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 15:48:53 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <string.h>
 
 char	*ft_strncat(char *dest, const char *src, size_t n)
 {

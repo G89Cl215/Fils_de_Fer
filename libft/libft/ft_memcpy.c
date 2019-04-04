@@ -6,11 +6,11 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 11:26:41 by flviret           #+#    #+#             */
-/*   Updated: 2019/03/05 11:38:36 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 16:03:14 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <string.h>
 
 void	*ft_memcpy(void *str1, const void *str2, size_t n)
 {

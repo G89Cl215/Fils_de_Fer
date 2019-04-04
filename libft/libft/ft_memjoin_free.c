@@ -6,11 +6,12 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 11:27:00 by flviret           #+#    #+#             */
-/*   Updated: 2019/03/05 11:38:38 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 15:34:48 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static void	*one_string_valid(void *str, size_t size)
 {

@@ -6,11 +6,12 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 11:25:14 by flviret           #+#    #+#             */
-/*   Updated: 2019/03/05 11:38:25 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 15:29:51 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h> 
 
 char	*ft_itoa_base(int nb, int base)
 {

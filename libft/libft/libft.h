@@ -6,15 +6,13 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 11:52:06 by flviret           #+#    #+#             */
-/*   Updated: 2019/03/29 17:44:43 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 16:01:26 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h>
-# include <unistd.h>
 # include <fcntl.h>
 # include <sys/types.h>
 # include <stdlib.h>

@@ -6,11 +6,11 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 11:51:44 by flviret           #+#    #+#             */
-/*   Updated: 2019/03/05 11:39:31 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 15:57:12 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 char	*ft_uitoa_base(unsigned int nb, int base)
 {

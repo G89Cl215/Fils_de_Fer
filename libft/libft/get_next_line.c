@@ -6,11 +6,12 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 11:56:21 by flviret           #+#    #+#             */
-/*   Updated: 2019/03/23 18:28:38 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/04 15:59:07 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 int		retnextline(char **str, const int fd, char **line)
 {

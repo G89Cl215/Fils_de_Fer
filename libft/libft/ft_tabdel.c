@@ -6,11 +6,13 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 11:51:24 by flviret           #+#    #+#             */
-/*   Updated: 2019/03/05 11:39:29 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 15:56:19 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+#include <string.h>
+
 
 void	ft_tabdel(void **tab, size_t size)
 {

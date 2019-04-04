@@ -6,11 +6,12 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 11:27:48 by flviret           #+#    #+#             */
-/*   Updated: 2019/03/05 11:38:44 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 15:37:13 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h> 
 
 static void		print_decimal_part(char *s, unsigned short p)
 {
