@@ -6,11 +6,13 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 17:40:58 by flviret           #+#    #+#             */
-/*   Updated: 2019/03/06 11:28:08 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 16:29:39 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "../libft/libft.h"
+#include <unistd.h>
 
 static int	clean_quit(t_buf *buf, va_list ap, int ret)
 {

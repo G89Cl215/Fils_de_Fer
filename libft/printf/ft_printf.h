@@ -6,17 +6,15 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 00:07:50 by flviret           #+#    #+#             */
-/*   Updated: 2019/03/06 16:26:57 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 16:32:30 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <unistd.h>
-# include <stdlib.h>
 # include <stdarg.h>
-# include "../libft/libft.h"
+# include <stddef.h>
 
 # define ALL_FLAGS	"*Llh+- .#0123456789,"
 # define ALL_CONV	"cspdiouxXf%"

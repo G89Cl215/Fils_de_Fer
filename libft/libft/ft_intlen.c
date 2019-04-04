@@ -6,11 +6,11 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/29 17:43:32 by flviret           #+#    #+#             */
-/*   Updated: 2019/03/29 17:44:08 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 16:17:04 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
 size_t		ft_intlen(long int n)
 {

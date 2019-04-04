@@ -6,11 +6,12 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/31 14:15:52 by flviret           #+#    #+#             */
-/*   Updated: 2019/02/21 15:11:42 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 16:28:04 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "../libft/libft.h"
 
 int			ft_format_plus_space(t_flags *fl, char **conv, int sign)
 {

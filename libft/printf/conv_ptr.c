@@ -6,11 +6,13 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/26 13:07:23 by flviret           #+#    #+#             */
-/*   Updated: 2019/04/03 13:53:08 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 16:24:57 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "../libft/libft.h"
+#include <stdlib.h>
 
 static int	clean_quit(char **conv, int ret)
 {

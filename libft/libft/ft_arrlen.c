@@ -6,11 +6,11 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/29 17:40:23 by flviret           #+#    #+#             */
-/*   Updated: 2019/03/29 17:41:48 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 16:17:20 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
 size_t		ft_arrlen(char **arr)
 {
