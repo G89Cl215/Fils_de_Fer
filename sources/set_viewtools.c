@@ -6,11 +6,10 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/01 14:14:06 by flviret           #+#    #+#             */
-/*   Updated: 2019/04/06 13:01:17 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/06 13:54:42 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
 #include "set_view.h"
 
 void		ft_set_view(t_data *data)

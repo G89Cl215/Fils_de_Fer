@@ -6,7 +6,7 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 14:51:19 by flviret           #+#    #+#             */
-/*   Updated: 2019/04/06 13:38:48 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/06 13:51:15 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <unistd.h>
 #include "fdf.h"
 #include "libft.h"
+#include "ft_printf.h"
 
 int		open_error(int ac, char **av)
 {

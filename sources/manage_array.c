@@ -6,12 +6,13 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 17:18:11 by flviret           #+#    #+#             */
-/*   Updated: 2019/04/06 13:39:57 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/06 13:50:51 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 #include "libft.h"
+#include "ft_printf.h"
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>

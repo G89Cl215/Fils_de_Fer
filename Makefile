@@ -6,7 +6,7 @@
 #    By: flviret <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/26 14:20:14 by flviret           #+#    #+#              #
-#    Updated: 2019/04/06 13:44:50 by tgouedar         ###   ########.fr        #
+#    Updated: 2019/04/06 13:48:56 by tgouedar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,11 +60,11 @@ all				:    $(NAME)
 $(LIB)			:
 	@make -C $(LIBFT_PATH)
 
-$(NAME)			:   $(LIB) Makefile $(OBJS) $(HDR) | $(DIR_O)
+$(NAME)			:   $(LIB) Makefile $(OBJS) $(HDR)
 	@$(CC) $(CFLAGS) $(LIB) -o $(NAME) $(SRCS) $(HDR_FLAG) $(FRAMEWORKS)
 	@echo "fdf has been successfully created."
 
-$(DIR_O)/%.o	:	$(SRC_DIR)/%.c $(HDR) 
+$(DIR_O)/%.o	:	$(SRC_DIR)/%.c $(HDR) | $(DIR_O)
 	@$(CC) $(CFLAGS) $(HDR_FLAG) -c $< -o $@
 	@echo " \t \t \t \t \t \t \t \t [OK] \r $< \r"
 

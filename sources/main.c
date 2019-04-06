@@ -6,11 +6,11 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 13:21:59 by flviret           #+#    #+#             */
-/*   Updated: 2019/04/06 13:00:42 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/06 13:54:08 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "ft_printf.h"
 #include "window_manipulation.h"
 
 static void	*init_data(t_data *new)
