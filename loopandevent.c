@@ -6,7 +6,7 @@
 /*   By: tgouedar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/24 17:03:43 by tgouedar          #+#    #+#             */
-/*   Updated: 2019/04/04 12:31:51 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/06 12:49:22 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void		ft_relevant_key(t_data *win, int key_id)
 	|| key_id == 13 || key_id == 14 || key_id == 24 || key_id == 27
 	|| key_id == 34 || key_id == 37 || key_id == 38 || key_id == 40
 	|| key_id == 123 || key_id == 124 || key_id == 125 || key_id == 126
-	|| key_id == 69 || key_id == 78)
+	|| key_id == 69 || key_id == 78 || key_id == 8)
 		ft_create_image(win);
 }
 
@@ -52,6 +52,8 @@ void		key_suit(int key_id, t_data *win)
 		mlx_destroy_window(win, (void*)(win->id_ptr));
 		exit(EXIT_SUCCESS);
 	}
+	if (key_id == 8)
+		win->color = (win->color + 1) % 3;
 }
 
 void		key_suit2(int key_id, t_data *win)

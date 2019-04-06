@@ -6,7 +6,7 @@
 /*   By: tgouedar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 12:45:47 by tgouedar          #+#    #+#             */
-/*   Updated: 2019/04/03 14:30:34 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 17:14:10 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 # define DEF_OFFSET 250
 # define WIN_FACTOR 50
+# define WIN "FdF"
 # define FS_WIDTH 1395
 # define FS_HEIGHT 2560
 # define CMD_ROT_X "Rotations   : autour de l'axe x < e, d > "

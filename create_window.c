@@ -6,7 +6,7 @@
 /*   By: tgouedar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 20:59:33 by tgouedar          #+#    #+#             */
-/*   Updated: 2019/04/03 14:31:09 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 18:11:49 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,9 @@ void		ft_init_window(t_data *win)
 		i++;
 	}
 	ft_set_iso(win);
-	win->mlx_ptr = mlx_init();
-	win->id_ptr = mlx_new_window(win->mlx_ptr, FS_HEIGHT, FS_WIDTH, "FdF");
+	if (!(win->mlx_ptr = mlx_init())
+	|| !(win->id_ptr = mlx_new_window(win->mlx_ptr, FS_HEIGHT, FS_WIDTH, WIN)))
+		return ;
 	ft_init_zoom(win);
 	ft_create_image(win);
 	ft_loop(win);

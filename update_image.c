@@ -6,7 +6,7 @@
 /*   By: tgouedar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/24 11:16:20 by tgouedar          #+#    #+#             */
-/*   Updated: 2019/04/04 12:31:58 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 17:48:41 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void
 }
 
 static void
-	ft_bresenham(t_data *win, int pt1[2], int pt2[2], unsigned int pixel[2])
+	ft_bresenham(t_data *w, int pt1[2], int pt2[2], unsigned int p[2])
 {
 	unsigned int		cnt;
 	unsigned int		i;
@@ -44,18 +44,17 @@ static void
 	cnt = (pt2[0] - pt1[0] > 0) ? pt2[0] - pt1[0] : pt1[0] - pt2[0];
 	while (i++ < cnt)
 	{
-		if (!(pixel[0] >= win->win_height) && !(pixel[1] >= win->win_width))
-			win->im_data[(pixel[0] + win->win_height * pixel[1]) * 4] = -1;
+		if (!(p[0] >= w->win_height) && !(p[1] >= w->win_width))
+			w->im_data[(p[0] + w->win_height * p[1]) * 4 + w->color] = -1;
 		err += pente;
 		while ((err > 1.0) || (err < -1.0))
 		{
-			pixel[1] += (err > 0.0) ? 1 : -1;
+			p[1] += (err > 0.0) ? 1 : -1;
 			err += (err > 0.0) ? -1.0 : 1.0;
-			if (!(pixel[0] >= win->win_height)
-			&& !(pixel[1] >= win->win_width))
-				win->im_data[(pixel[0] + win->win_height * pixel[1]) * 4] = -1;
+			if (!(p[0] >= w->win_height) && !(p[1] >= w->win_width))
+				w->im_data[(p[0] + w->win_height * p[1]) * 4 + w->color] = -1;
 		}
-		pixel[0] += (pt2[0] > pt1[0]) ? 1 : -1;
+		p[0] += (pt2[0] > pt1[0]) ? 1 : -1;
 	}
 }
 
@@ -76,14 +75,16 @@ void
 		while (i++ < cnt)
 		{
 			if (!(pixel[0] >= win->win_height) && !(pixel[1] >= win->win_width))
-				win->im_data[(pixel[0] + win->win_height * pixel[1]) * 4] = -1;
+				win->im_data[(pixel[0] + win->win_height * pixel[1]) * 4
+													+ win->color] = -1;
 			pixel[1] += (pt2[1] - pt1[1] > 0) ? 1 : -1;
 		}
 	}
 	else
 		ft_bresenham(win, pt1, pt2, pixel);
 	if (!(pixel[0] >= win->win_height) && !(pixel[1] >= win->win_width))
-		win->im_data[(pixel[0] + win->win_height * pixel[1]) * 4] = -1;
+		win->im_data[(pixel[0] + win->win_height * pixel[1]) * 4
+												+ win->color] = -1;
 }
 
 void
@@ -116,7 +117,9 @@ void
 	int		endian;
 	void	*new_im_ptr;
 
-	new_im_ptr = mlx_new_image(win->mlx_ptr, win->win_height, win->win_width);
+	if (!(new_im_ptr = mlx_new_image(win->mlx_ptr, win->win_height,
+					win->win_width)))
+		return ;
 	win->im_data = mlx_get_data_addr(new_im_ptr, &(bpp), &(s_l), &(endian));
 	ft_fill_image(win);
 	mlx_put_image_to_window(win->mlx_ptr, win->id_ptr, new_im_ptr, 0, 0);

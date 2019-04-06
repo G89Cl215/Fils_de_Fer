@@ -6,7 +6,7 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 13:27:32 by flviret           #+#    #+#             */
-/*   Updated: 2019/04/03 15:13:47 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 17:30:01 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <unistd.h>
 # include "libft/libft/libft.h"
 # include "libft/printf/ft_printf.h"
-# include "libft/libft/option.h"
 
 typedef struct	s_array
 {
@@ -36,6 +35,7 @@ typedef struct	s_data
 	void			*mlx_ptr;
 	void			*id_ptr;
 	char			*im_data;
+	int				color;
 	float			origin[2];
 	int				offset_origin_x;
 	int				offset_origin_y;

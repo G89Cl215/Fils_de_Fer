@@ -6,7 +6,7 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 13:21:59 by flviret           #+#    #+#             */
-/*   Updated: 2019/04/03 15:09:49 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/04 17:30:01 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 static void	*init_data(t_data *new)
 {
 	new->tab_height = 0;
+	new->color = 0;
 	new->tab_width = 0;
 	new->win_height = FS_HEIGHT;
 	new->win_width = FS_WIDTH;
@@ -39,7 +40,7 @@ static int	ft_parse_file(int ac, char **av)
 	}
 	if (j != 1)
 	{
-		j > 1 ? ft_printf("too many files found") : ft_printf("no file found");
+		j > 1 ? ft_printf("Too many files found") : ft_printf("No file found");
 		return (0);
 	}
 	return (1);
@@ -47,21 +48,15 @@ static int	ft_parse_file(int ac, char **av)
 
 int			main(int ac, char **av)
 {
-	t_options		option;
 	t_data			data;
 
-	if (ac < 2)
-		ft_printf("no file found");
-	else if (ft_option(ac, av, &option))
-	{
-		if (!(ft_parse_file(ac, av)))
-			return (0);
-		init_data(&data);
-		if (!(check_file(av[1], &data)))
-			return (0);
-		new_tab(&data);
-		fd_in_array(av[1], &data);
-		ft_init_window(&data);
-	}
+	if (!(ft_parse_file(ac, av)))
+		return (0);
+	init_data(&data);
+	if (!(check_file(av[1], &data)))
+		return (0);
+	new_tab(&data);
+	fd_in_array(av[1], &data);
+	ft_init_window(&data);
 	return (0);
 }
