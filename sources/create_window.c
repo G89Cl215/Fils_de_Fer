@@ -6,13 +6,14 @@
 /*   By: tgouedar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 20:59:33 by tgouedar          #+#    #+#             */
-/*   Updated: 2019/04/04 18:11:49 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/06 13:27:52 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <mlx.h>
+#include <stdlib.h>
 #include "set_view.h"
-#include "libft/printf/ft_printf.h"
+#include "ft_printf.h"
 #include "window_manipulation.h"
 #include "fdf.h"
 

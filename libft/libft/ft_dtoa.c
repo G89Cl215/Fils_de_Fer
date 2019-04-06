@@ -6,11 +6,12 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 11:23:08 by flviret           #+#    #+#             */
-/*   Updated: 2019/04/04 15:28:14 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/06 13:35:36 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static char		*check_further(char *s, unsigned short precision, int *ret)
 {

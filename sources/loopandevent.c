@@ -6,11 +6,12 @@
 /*   By: tgouedar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/24 17:03:43 by tgouedar          #+#    #+#             */
-/*   Updated: 2019/04/06 12:49:22 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/06 13:28:57 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <mlx.h>
+#include <stdlib.h>
 #include "fdf.h"
 #include "set_view.h"
 #include "window_manipulation.h"

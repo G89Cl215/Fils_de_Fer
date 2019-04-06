@@ -6,10 +6,11 @@
 /*   By: tgouedar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/24 11:16:20 by tgouedar          #+#    #+#             */
-/*   Updated: 2019/04/04 17:48:41 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/06 13:26:37 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <mlx.h>
 #include "window_manipulation.h"
 
 static void

@@ -6,11 +6,15 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/01 13:57:30 by flviret           #+#    #+#             */
-/*   Updated: 2019/04/03 15:13:21 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/06 13:38:27 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <fcntl.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include "fdf.h"
+#include "libft.h"
 
 void		ft_free_tab(char **tab)
 {

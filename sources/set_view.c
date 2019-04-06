@@ -6,14 +6,14 @@
 /*   By: tgouedar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 15:26:25 by tgouedar          #+#    #+#             */
-/*   Updated: 2019/04/03 14:34:17 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/06 13:01:15 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "set_view.h"
 #include "window_manipulation.h"
-#include "libft/printf/ft_printf.h"
+#include "ft_printf.h"
 
 const float		g_iso[2][3] =
 {

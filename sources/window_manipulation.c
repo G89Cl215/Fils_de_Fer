@@ -6,10 +6,11 @@
 /*   By: tgouedar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 12:39:54 by tgouedar          #+#    #+#             */
-/*   Updated: 2019/04/04 18:16:41 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/06 13:34:57 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h> 
 #include "window_manipulation.h"
 
 static float	ft_find_dim(t_data *win, int flag)

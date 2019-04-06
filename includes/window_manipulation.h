@@ -6,7 +6,7 @@
 /*   By: tgouedar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 12:45:47 by tgouedar          #+#    #+#             */
-/*   Updated: 2019/04/04 17:14:10 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/06 13:18:18 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define WINDOW_MANIPULATION_H
 
 # include "fdf.h"
-# include "libft/libft/option.h"
 
 # define DEF_OFFSET 250
 # define WIN_FACTOR 50

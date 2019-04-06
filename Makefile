@@ -6,61 +6,81 @@
 #    By: flviret <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/26 14:20:14 by flviret           #+#    #+#              #
-#    Updated: 2019/04/03 14:21:29 by flviret          ###   ########.fr        #
+#    Updated: 2019/04/06 13:24:56 by tgouedar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME    =    fdf
+NAME			=    fdf
 
-LIBFT_PATH    =    libft/
-LMLX_PATH    =    minilibx_macos/
+LIBFT_PATH		=    libft
 
-SRCS    =    main.c    \
-			 create_window.c \
-			 loopandevent.c \
-			 manage_array.c \
-			 manage_array2.c \
-			 open_error.c \
-			 set_view.c \
-			 set_viewtools.c \
-			 update_image.c \
-			 window_manipulation.c
+SOURCES			=   main.c    \
+					create_window.c \
+					loopandevent.c \
+					manage_array.c \
+					manage_array2.c \
+					open_error.c \
+					set_view.c \
+					set_viewtools.c \
+					update_image.c \
+					window_manipulation.c
 
-OBJS    =    $(SRCS:.c=.o)
+SRC_DIR			=	sources
 
-HDR        =    fdf.h
+SRCS			=    $(addprefix $(SRC_DIR)/,$(SOURCES))
 
-CC        =    gcc
-CFLAGS    =    -Wall -Werror -Wextra
+DIR_O			=	objects
 
-LIB        =    $(LIBFT_PATH)/libftprintf.a
+OBJS			=    $(addprefix $(DIR_O)/,$(SOURCES:.c=.o))
 
-FRAMEWORKS    =  -L /usr/local/lib  -lmlx -framework OpenGL -framework AppKit
+HEADERS			=	fdf.h \
+					window_manipulation.h \
+					set_view.h \
 
-RM        =    rm -f
+HDR_DIR			=	includes
 
-CLEAN    =    clean
+HDR				=	 $(addprefix $(HDR_DIR)/,$(HEADERS))
 
-all        :    $(NAME)
+HDR_FLAG		=	-I $(LIBFT_PATH)/$(LIBFT_PATH) \
+					-I $(LIBFT_PATH)/printf \
+					-I $(HDR_DIR)
 
-$(LIB)    :
+CC				=    gcc
+CFLAGS			=    -Wall -Werror -Wextra
+
+LIB				=    $(LIBFT_PATH)/libftprintf.a
+
+FRAMEWORKS		=  -L /usr/local/lib  -lmlx -framework OpenGL -framework AppKit
+
+RM				=    rm -f
+
+
+all				:    $(NAME)
+
+$(LIB)			:
 	@make -C $(LIBFT_PATH)
 
-
-$(NAME)    :    $(OBJS) $(HDR) $(LIB) Makefile
-	@$(CC) $(CFLAGS) $(LIB) -o $(NAME) $(SRCS) -I $(HDR) $(FRAMEWORKS)
+$(NAME)			:   $(LIB) Makefile $(OBJS) $(HDR) | $(DIR_O)
+	@$(CC) $(CFLAGS) $(LIB) -o $(NAME) $(SRCS) $(HDR_FLAG) $(FRAMEWORKS)
 	@echo "fdf has been successfully created."
 
-clean    :
+$(DIR_O)/%.o	:	$(SRC_DIR)/%.c $(HDR) 
+	@$(CC) $(CFLAGS) $(HDR_FLAG) -c $< -o $@
+	@echo " \t \t \t \t \t \t \t \t [OK] \r $< \r"
+
+$(DIR_O)		:
+	@/bin/mkdir -p $(DIR_O)
+
+clean			:
 	@$(RM) $(OBJS)
 	@make clean -C $(LIBFT_PATH)
 	@echo "All .o files have been deleted."
 
-fclean    :    clean
+fclean			:    clean
 	@make fclean -C $(LIBFT_PATH)
 	@$(RM) $(NAME) $(LIB)
 	@echo "fclean done."
 
-re        :    fclean all
+re				:    fclean all
 
 .PHONY:    all clean fclean re

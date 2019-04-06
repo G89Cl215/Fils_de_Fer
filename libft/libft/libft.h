@@ -6,17 +6,13 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 11:52:06 by flviret           #+#    #+#             */
-/*   Updated: 2019/04/04 16:01:26 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/06 13:41:11 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <fcntl.h>
-# include <sys/types.h>
-# include <stdlib.h>
-# include <unistd.h>
 # include <sys/uio.h>
 
 # define BUFF_SIZE	1

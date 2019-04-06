@@ -6,11 +6,15 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 17:18:11 by flviret           #+#    #+#             */
-/*   Updated: 2019/04/03 15:11:42 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/06 13:39:57 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+#include "libft.h"
+#include <fcntl.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 static void	check_width(int fd, int width)
 {

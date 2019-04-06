@@ -6,20 +6,15 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 13:27:32 by flviret           #+#    #+#             */
-/*   Updated: 2019/04/04 17:30:01 by tgouedar         ###   ########.fr       */
+/*   Updated: 2019/04/06 13:27:03 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 
-# include <stdlib.h>
-# include <mlx.h>
-# include <fcntl.h>
-# include <math.h>
-# include <unistd.h>
-# include "libft/libft/libft.h"
-# include "libft/printf/ft_printf.h"
+//# include "libft.h"
+# include "ft_printf.h"
 
 typedef struct	s_array
 {

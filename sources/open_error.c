@@ -6,11 +6,15 @@
 /*   By: flviret <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 14:51:19 by flviret           #+#    #+#             */
-/*   Updated: 2019/04/03 13:40:51 by flviret          ###   ########.fr       */
+/*   Updated: 2019/04/06 13:38:48 by tgouedar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <fcntl.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include "fdf.h"
+#include "libft.h"
 
 int		open_error(int ac, char **av)
 {
