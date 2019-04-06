@@ -6,7 +6,7 @@
 #    By: flviret <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/26 14:20:14 by flviret           #+#    #+#              #
-#    Updated: 2019/04/06 13:24:56 by tgouedar         ###   ########.fr        #
+#    Updated: 2019/04/06 13:44:50 by tgouedar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ $(DIR_O)		:
 	@/bin/mkdir -p $(DIR_O)
 
 clean			:
-	@$(RM) $(OBJS)
+	@rm -Rf $(DIR_O)
 	@make clean -C $(LIBFT_PATH)
 	@echo "All .o files have been deleted."
 
